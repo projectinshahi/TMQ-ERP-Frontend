@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'theme/app_color_extension.dart';
 import 'theme/app_dimens.dart';
@@ -6,7 +7,9 @@ import 'theme/app_theme.dart';
 import 'theme/app_typography.dart';
 
 void main() {
-  runApp(const MyApp());
+  // ProviderScope is the root of the Riverpod state-management tree; every
+  // controller (provider/notifier) is read from within it.
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
